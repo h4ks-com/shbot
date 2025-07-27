@@ -1,0 +1,7 @@
+config
+hda.tmp
+node_modules/
+package-lock.json
+settings.js
+shbot-kernel
+shbot.cpio.gz

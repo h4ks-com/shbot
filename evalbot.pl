@@ -34,14 +34,15 @@ sub my_sigint_catcher {
 my $irc = new Net::IRC;
 my $conn = $irc->newconn( Server => "$server",
     Nick => "$nick",
-    Ircname => "shbot, owned by $owner, based on evalbot" );
+    Ircname => "shbot, owned by $owner, based on evalbot", SSL => 1,);
 
 
 my $joined=0;
 
 sub join_channels {
     foreach (@channels) {
-	$conn->join( "$_" );
+      # Log the join attempt
+      $conn->join( "$_" );
     }
     $joined=1;
 }

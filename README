@@ -1,7 +1,25 @@
-Shbot is an IRC bot that runs shell code. It is a fork of evalbot
+Shbot is an IRC bot that runs shell code. It is a fork of a fork of evalbot
 (http://www.vidarholen.net/contents/evalbot/).
 
 To run shbot, you need an initramfs image and a kernel, which you can find here:
 https://github.com/geirha/shbot-initramfs/releases
 
 Save the files as `shbot.cpio.gz` and `shbot-kernel`, then run `make`
+
+# TLDR:
+
+Make sure you have qemu installed and nodejs
+
+```bash
+git clone https://gitlab.com/matheusfillipeag/shbot.git 
+cd shbot
+wget https://github.com/geirha/shbot-initramfs/releases/download/v0.1/shbot-0.1.cpio.gz -o shbot.cpio.gz
+wget https://github.com/geirha/shbot-initramfs/releases/download/v0.1/shbot-kernel-4.7.2 -o shbot-kernel
+make  # this will create the hda
+npm install  # use node 10.30.0 or older to install, you can run this with later versions then
+node index.js
+```
+
+
+
+
